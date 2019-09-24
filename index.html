@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/l2/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/IMF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="L1e">
@@ -307,7 +307,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/24/l2/" itemprop="url">l2</a></h1>
+                <a class="post-title-link" href="/2019/09/24/IMF/" itemprop="url">IMF靶机渗透</a></h1>
         
 
         <div class="post-meta">
@@ -319,7 +319,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T15:04:30+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T21:26:47+08:00">
                 2019-09-24
               </time>
             
@@ -358,10 +358,12 @@
 
       
         
-          <h1 id="sssss"><a href="#sssss" class="headerlink" title="sssss"></a>sssss</h1><p>sssss<br>sssss</p>
+          
+          探测ip为192.168.40.199，扫描一波发现只有80端口翻了一下在源码里找到个base64解密以后是allthefiles，看样子要扫目录使用Dirbuster扫出三个base64样子的文件，拼接一下得到第二个flag看起来是一个目录，访问了一下是个登陆界面随便试一下登录发现用户名不存在会返
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/24/l2/#more" rel="contents">
+            <a class="btn" href="/2019/09/24/IMF/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -412,7 +414,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/23/vulnhub1/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/pwnlab-init/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="L1e">
@@ -431,7 +433,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/23/vulnhub1/" itemprop="url">vulnhub1</a></h1>
+                <a class="post-title-link" href="/2019/09/24/pwnlab-init/" itemprop="url">pwnlab_init靶机渗透</a></h1>
         
 
         <div class="post-meta">
@@ -443,8 +445,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-23T19:01:22+08:00">
-                2019-09-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T20:49:37+08:00">
+                2019-09-24
               </time>
             
 
@@ -483,12 +485,264 @@
       
         
           
-          这是一个靶机
-
-          
+          探测ip为192.168.40.198，扫描一下端口发现3306和一个不知道是什么的端口又是文件包含漏洞，直接使用php://filter读源码index源代码:这个地方cookie处有一个包含文件
+12345678910111213141516171819202122232425262728293
+          ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/23/vulnhub1/#more" rel="contents">
+            <a class="btn" href="/2019/09/24/pwnlab-init/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/milnet-1.0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="L1e">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/1565005156003.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L1e's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/24/milnet-1.0/" itemprop="url">milnet-1.0靶机渗透</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T19:48:19+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含使用协议读取文件源代码，发现00截断用不了解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的P
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/24/milnet-1.0/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/LordOfTheRoot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="L1e">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/1565005156003.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L1e's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/24/LordOfTheRoot/" itemprop="url">LordOfTheRoot靶机渗透</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T15:52:08+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          探测ip为192.168.40.143使用nmap扫描一下端口发现只有80端口网站就一个登录功能一个上传文件功能，然后发现url应该有文件包含漏洞试一下00截断，是一个本地包含既然有包含那就上传一个文件包含就可以getshell了在上传的表单中填写的邮箱和密码是可以登录的，也就是填什么登录就填什么这
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/09/24/LordOfTheRoot/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -574,7 +828,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

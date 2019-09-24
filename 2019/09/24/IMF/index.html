@@ -86,17 +86,32 @@
 
 
 
-<meta name="description" content="没有">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+<meta name="description" content="探测ip为192.168.40.199，扫描一波发现只有80端口翻了一下在源码里找到个base64解密以后是allthefiles，看样子要扫目录使用Dirbuster扫出三个base64样子的文件，拼接一下得到第二个flag看起来是一个目录，访问了一下是个登陆界面随便试一下登录发现用户名不存在会返回用户名错误，还有一点注释，翻译为数据库出了问题，所以密码是一个固定的密码用户名爆破了一下没结果，返">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IMF靶机渗透">
+<meta property="og:url" content="http://yoursite.com/2019/09/24/IMF/index.html">
 <meta property="og:site_name" content="L1e&#39;s blog">
-<meta property="og:description" content="没有">
+<meta property="og:description" content="探测ip为192.168.40.199，扫描一波发现只有80端口翻了一下在源码里找到个base64解密以后是allthefiles，看样子要扫目录使用Dirbuster扫出三个base64样子的文件，拼接一下得到第二个flag看起来是一个目录，访问了一下是个登陆界面随便试一下登录发现用户名不存在会返回用户名错误，还有一点注释，翻译为数据库出了问题，所以密码是一个固定的密码用户名爆破了一下没结果，返">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-24T07:12:51.876Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/7.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/8.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/9.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/10.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/11.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/12.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/13.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/24/IMF/14.png">
+<meta property="og:updated_time" content="2019-09-24T17:26:59.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="没有">
+<meta name="twitter:title" content="IMF靶机渗透">
+<meta name="twitter:description" content="探测ip为192.168.40.199，扫描一波发现只有80端口翻了一下在源码里找到个base64解密以后是allthefiles，看样子要扫目录使用Dirbuster扫出三个base64样子的文件，拼接一下得到第二个flag看起来是一个目录，访问了一下是个登陆界面随便试一下登录发现用户名不存在会返回用户名错误，还有一点注释，翻译为数据库出了问题，所以密码是一个固定的密码用户名爆破了一下没结果，返">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/24/IMF/2.png">
 
 
 
@@ -126,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/24/IMF/">
 
 
 
 
 
-  <title>关于 | L1e's blog</title>
+  <title>IMF靶机渗透 | L1e's blog</title>
   
 
 
@@ -279,34 +294,138 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/IMF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="L1e">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/1565005156003.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="L1e's blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">关于</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <p>没有</p>
-
+          <h1 class="post-title" itemprop="name headline">IMF靶机渗透</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T21:26:47+08:00">
+                2019-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>探测ip为192.168.40.199，扫描一波发现只有80端口<br><img src="2.png" alt="ip"><br><img src="1.png" alt="ip"><br>翻了一下在源码里找到个base64解密以后是allthefiles，看样子要扫目录<br><img src="3.png" alt="ip"><br>使用Dirbuster扫出三个base64样子的文件，拼接一下得到第二个flag<br><img src="4.png" alt="ip"><br>看起来是一个目录，访问了一下是个登陆界面<br><img src="5.png" alt="ip"><br>随便试一下登录发现用户名不存在会返回用户名错误，还有一点注释，翻译为数据库出了问题，所以密码是一个固定的密码<br><img src="7.png" alt="ip"><br>用户名爆破了一下没结果，返回到首页发现下面有三个邮箱地址，试了一下发现有一个是正确的用户名，使用burp爆破一下密码<br><img src="6.png" alt="ip"><br>操!爆破到一半想起既然默认密码那肯定使用了strcmp来比较字符串，然而strcmp字符串有一边是数组是则判断两个字符串相等，试了一下果然没错<br><img src="8.png" alt="ip"><br>登陆进来这几个功能好像没什么用啊<br><img src="9.png" alt="ip"><br>NMD搞好久以为是文件包含，试了一下原来是注入，然后得到一个新文件名，打开是个二维码，扫了一下得到文件uploadr942.php<br><img src="10.png" alt="ip"><br><img src="11.png" alt="ip"><br><img src="12.png" alt="ip"><br>一个文件上传的地方，但是不能上传php文件，绕了好久搞不便，看了一些别人写的，发现上传gif居然能执行php代码，这尼玛什么瞎掰玩意，对文件内容也有过滤的，但是很容易就过了<br><img src="13.png" alt="ip"><br>最终反弹shell完事，还没有学后渗透提权，到此为止<br><img src="14.png" alt="ip"></p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/09/24/pwnlab-init/" rel="next" title="pwnlab_init靶机渗透">
+                <i class="fa fa-chevron-left"></i> pwnlab_init靶机渗透
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
