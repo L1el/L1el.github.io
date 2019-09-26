@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>DC-8靶机渗透</title>
+      <link href="/2019/09/26/DC-8/"/>
+      <url>/2019/09/26/DC-8/</url>
+      
+        <content type="html"><![CDATA[<p>打开是一个Drupal的CMS<br><img src="1.png" alt="ip"><br>随便点开一个文章看了一下有注入，得到登录的账户和hash<br><img src="2.png" alt="ip"><br>使用kali下的john破解hash得到密码登录后简单浏览了一番，只有简单的添加页面的功能<br>仔细查看一番后，在一个添加地方发现可以写PHP代码<br>先添加一个表单，在表单设置地方可以写PHP代码，大概流程为提交表单后执行php代码，先写一个phpinfo看看<br><img src="3.png" alt="ip"><br><img src="4.png" alt="ip"></p><p>上面如果只有php代码执行不了，在代码外面随便加点字符，再添加一个表单的值<br><img src="5.png" alt="ip"><br>接下来随便提交一点东西，提交后php代码执行了，那接下来反弹shell就好<br>把phpinfo改成反弹shell的语句<br><img src="6.png" alt="ip"><br><img src="7.png" alt="ip"><br>提交后。shell反弹了，太菜还没有学后渗透提权，到此为止<br><img src="8.png" alt="ip"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nezukochan靶机渗透</title>
+      <link href="/2019/09/26/nezukochan/"/>
+      <url>/2019/09/26/nezukochan/</url>
+      
+        <content type="html"><![CDATA[<p>扫ip扫端口，这靶机有两个ip但是页面都是一样的，一开始不知道13337是什么服务，使用-sV得知是个https的<br><img src="1.png" alt="ip"><br>打开是一个webmin，爆破不行，直接搜一下存在的漏洞，RCE<br><img src="2.png" alt="ip"><br><img src="3.png" alt="ip"><br>修改一下脚本中的要执行的命令，运行反弹shell<br><img src="5.png" alt="ip"><br><img src="4.png" alt="ip"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Prime_Series靶机渗透</title>
       <link href="/2019/09/25/Prime_Series/"/>
       <url>/2019/09/25/Prime_Series/</url>

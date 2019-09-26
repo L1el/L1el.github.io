@@ -86,26 +86,23 @@
 
 
 
-<meta name="description" content="探测ip为192.168.40.143使用nmap扫描一下端口发现只有80端口网站就一个登录功能一个上传文件功能，然后发现url应该有文件包含漏洞试一下00截断，是一个本地包含既然有包含那就上传一个文件包含就可以getshell了在上传的表单中填写的邮箱和密码是可以登录的，也就是填什么登录就填什么这里会检测文件开头的几个字符是否是PDF文件，传个正常的改一下就好，先试试phpinfo能不能运行上传">
+<meta name="description" content="扫ip扫端口，这靶机有两个ip但是页面都是一样的，一开始不知道13337是什么服务，使用-sV得知是个https的打开是一个webmin，爆破不行，直接搜一下存在的漏洞，RCE修改一下脚本中的要执行的命令，运行反弹shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LordOfTheRoot靶机渗透">
-<meta property="og:url" content="http://yoursite.com/2019/09/24/LordOfTheRoot/index.html">
+<meta property="og:title" content="nezukochan靶机渗透">
+<meta property="og:url" content="http://yoursite.com/2019/09/26/nezukochan/index.html">
 <meta property="og:site_name" content="L1e&#39;s blog">
-<meta property="og:description" content="探测ip为192.168.40.143使用nmap扫描一下端口发现只有80端口网站就一个登录功能一个上传文件功能，然后发现url应该有文件包含漏洞试一下00截断，是一个本地包含既然有包含那就上传一个文件包含就可以getshell了在上传的表单中填写的邮箱和密码是可以登录的，也就是填什么登录就填什么这里会检测文件开头的几个字符是否是PDF文件，传个正常的改一下就好，先试试phpinfo能不能运行上传">
+<meta property="og:description" content="扫ip扫端口，这靶机有两个ip但是页面都是一样的，一开始不知道13337是什么服务，使用-sV得知是个https的打开是一个webmin，爆破不行，直接搜一下存在的漏洞，RCE修改一下脚本中的要执行的命令，运行反弹shell">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/7.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/8.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/6.png">
-<meta property="og:updated_time" content="2019-09-24T11:47:48.528Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/26/nezukochan/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/26/nezukochan/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/26/nezukochan/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/26/nezukochan/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/26/nezukochan/4.png">
+<meta property="og:updated_time" content="2019-09-26T08:37:57.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LordOfTheRoot靶机渗透">
-<meta name="twitter:description" content="探测ip为192.168.40.143使用nmap扫描一下端口发现只有80端口网站就一个登录功能一个上传文件功能，然后发现url应该有文件包含漏洞试一下00截断，是一个本地包含既然有包含那就上传一个文件包含就可以getshell了在上传的表单中填写的邮箱和密码是可以登录的，也就是填什么登录就填什么这里会检测文件开头的几个字符是否是PDF文件，传个正常的改一下就好，先试试phpinfo能不能运行上传">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/24/LordOfTheRoot/7.png">
+<meta name="twitter:title" content="nezukochan靶机渗透">
+<meta name="twitter:description" content="扫ip扫端口，这靶机有两个ip但是页面都是一样的，一开始不知道13337是什么服务，使用-sV得知是个https的打开是一个webmin，爆破不行，直接搜一下存在的漏洞，RCE修改一下脚本中的要执行的命令，运行反弹shell">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/26/nezukochan/1.png">
 
 
 
@@ -135,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/24/LordOfTheRoot/">
+  <link rel="canonical" href="http://yoursite.com/2019/09/26/nezukochan/">
 
 
 
 
 
-  <title>LordOfTheRoot靶机渗透 | L1e's blog</title>
+  <title>nezukochan靶机渗透 | L1e's blog</title>
   
 
 
@@ -300,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/LordOfTheRoot/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/26/nezukochan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="L1e">
@@ -317,7 +314,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">LordOfTheRoot靶机渗透</h1>
+          <h1 class="post-title" itemprop="name headline">nezukochan靶机渗透</h1>
         
 
         <div class="post-meta">
@@ -329,8 +326,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T15:52:08+08:00">
-                2019-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-26T10:22:17+08:00">
+                2019-09-26
               </time>
             
 
@@ -367,7 +364,7 @@
       
 
       
-        <p>探测ip为192.168.40.143<br><img src="7.png" alt="ip"><br>使用nmap扫描一下端口发现只有80端口<br><img src="8.png" alt="端口"><br>网站就一个登录功能一个上传文件功能，然后发现url应该有文件包含漏洞试一下00截断，是一个本地包含<br><img src="5.png" alt="端口"><br><img src="4.png" alt="端口"><br>既然有包含那就上传一个文件包含就可以getshell了<br>在上传的表单中填写的邮箱和密码是可以登录的，也就是填什么登录就填什么<br>这里会检测文件开头的几个字符是否是PDF文件，传个正常的改一下就好，先试试phpinfo能不能运行<br><img src="2.png" alt="端口"><br>上传文件后没有返回路径，来到登录页面使用表单中填写的邮箱和密码登录可以看见上传的文件路径，然后就执行成功了<br><img src="1.png" alt="端口"><br><img src="3.png" alt="端口"><br>那么现在执行以下反弹shell就可以了<br><img src="6.png" alt="端口"><br>还没有学后渗透提权，到此为止</p>
+        <p>扫ip扫端口，这靶机有两个ip但是页面都是一样的，一开始不知道13337是什么服务，使用-sV得知是个https的<br><img src="1.png" alt="ip"><br>打开是一个webmin，爆破不行，直接搜一下存在的漏洞，RCE<br><img src="2.png" alt="ip"><br><img src="3.png" alt="ip"><br>修改一下脚本中的要执行的命令，运行反弹shell<br><img src="5.png" alt="ip"><br><img src="4.png" alt="ip"></p>
 
       
     </div>
@@ -392,14 +389,18 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/09/25/Prime_Series/" rel="next" title="Prime_Series靶机渗透">
+                <i class="fa fa-chevron-left"></i> Prime_Series靶机渗透
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/24/milnet-1.0/" rel="prev" title="milnet-1.0靶机渗透">
-                milnet-1.0靶机渗透 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/09/26/DC-8/" rel="prev" title="DC-8靶机渗透">
+                DC-8靶机渗透 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
