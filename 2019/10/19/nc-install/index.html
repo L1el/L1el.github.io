@@ -86,26 +86,17 @@
 
 
 
-<meta name="description" content="探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含使用协议读取文件源代码，发现00截断用不了解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的PHP后缀限制可以执行命令后那就反弹个shell还没有学后渗透提权，到此为止">
+<meta name="description" content="下载解压  wget https://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gztar -zxvf netcat-0.7.1.tar.gz -C /usr/localcd /usr/localmv netcat-0.7.1 netcatcd /usr/local/netcat./configurem">
 <meta property="og:type" content="article">
-<meta property="og:title" content="milnet-1.0靶机渗透">
-<meta property="og:url" content="http://yoursite.com/2019/09/24/milnet-1.0/index.html">
+<meta property="og:title" content="centos安装nc">
+<meta property="og:url" content="http://yoursite.com/2019/10/19/nc-install/index.html">
 <meta property="og:site_name" content="L1e&#39;s blog">
-<meta property="og:description" content="探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含使用协议读取文件源代码，发现00截断用不了解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的PHP后缀限制可以执行命令后那就反弹个shell还没有学后渗透提权，到此为止">
+<meta property="og:description" content="下载解压  wget https://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gztar -zxvf netcat-0.7.1.tar.gz -C /usr/localcd /usr/localmv netcat-0.7.1 netcatcd /usr/local/netcat./configurem">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/8.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/6.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/7.png">
-<meta property="og:updated_time" content="2019-09-24T12:54:33.264Z">
+<meta property="og:updated_time" content="2019-10-18T18:33:52.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="milnet-1.0靶机渗透">
-<meta name="twitter:description" content="探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含使用协议读取文件源代码，发现00截断用不了解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的PHP后缀限制可以执行命令后那就反弹个shell还没有学后渗透提权，到此为止">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/24/milnet-1.0/1.png">
+<meta name="twitter:title" content="centos安装nc">
+<meta name="twitter:description" content="下载解压  wget https://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gztar -zxvf netcat-0.7.1.tar.gz -C /usr/localcd /usr/localmv netcat-0.7.1 netcatcd /usr/local/netcat./configurem">
 
 
 
@@ -135,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/24/milnet-1.0/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/19/nc-install/">
 
 
 
 
 
-  <title>milnet-1.0靶机渗透 | L1e's blog</title>
+  <title>centos安装nc | L1e's blog</title>
   
 
 
@@ -300,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/milnet-1.0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/nc-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="L1e">
@@ -317,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">milnet-1.0靶机渗透</h1>
+          <h1 class="post-title" itemprop="name headline">centos安装nc</h1>
         
 
         <div class="post-meta">
@@ -329,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T19:48:19+08:00">
-                2019-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T02:31:48+08:00">
+                2019-10-19
               </time>
             
 
@@ -367,7 +358,15 @@
       
 
       
-        <p>探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西<br><img src="1.png" alt="ip"><br><img src="2.png" alt="ip"><br><img src="8.png" alt="ip"><br>翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含<br>使用协议读取文件源代码，发现00截断用不了<br><img src="3.png" alt="ip"><br><img src="4.png" alt="ip"><br>解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的PHP后缀限制<br><img src="5.png" alt="ip"><br><img src="6.png" alt="ip"><br>可以执行命令后那就反弹个shell<br><img src="7.png" alt="ip"><br>还没有学后渗透提权，到此为止</p>
+        <ol>
+<li>下载解压</li>
+</ol>
+<p>wget <a href="https://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gz" target="_blank" rel="noopener">https://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gz</a><br>tar -zxvf netcat-0.7.1.tar.gz -C /usr/local<br>cd /usr/local<br>mv netcat-0.7.1 netcat<br>cd /usr/local/netcat<br>./configure<br>make &amp;&amp; make install</p>
+<ol start="2">
+<li>配置</li>
+</ol>
+<p>vim /etc/profile<br># set  netcat path<br>export NETCAT_HOME=/usr/local/netcat<br>export PATH=$PATH:$NETCAT_HOME/bin</p>
+<p>保存，退出，并使配置生效：<br>source /etc/profile</p>
 
       
     </div>
@@ -392,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/24/LordOfTheRoot/" rel="next" title="LordOfTheRoot靶机渗透">
-                <i class="fa fa-chevron-left"></i> LordOfTheRoot靶机渗透
+              <a href="/2019/10/19/cms-lfi/" rel="next" title="某靶场cms后台LFI getshell">
+                <i class="fa fa-chevron-left"></i> 某靶场cms后台LFI getshell
               </a>
             
           </div>
@@ -401,10 +400,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/24/pwnlab-init/" rel="prev" title="pwnlab_init靶机渗透">
-                pwnlab_init靶机渗透 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>

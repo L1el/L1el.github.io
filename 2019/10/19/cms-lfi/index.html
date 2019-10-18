@@ -86,26 +86,25 @@
 
 
 
-<meta name="description" content="探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含使用协议读取文件源代码，发现00截断用不了解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的PHP后缀限制可以执行命令后那就反弹个shell还没有学后渗透提权，到此为止">
+<meta name="description" content="首先是后台，这里存在弱口令随手admin admin就进去了进入后台有个主页频道菜单的管理，可以添加频道，进去康康进到添加频道的地方，发现此处是引用php模板的，后台代码猜测为include(xxxx)既然如此那肯定存在LFI了，想办法搞一搞，在下面看到个上传图片的地方上传个有phpinfo的图片康康，在前台随便查看个图片发现目录和这里的不是一个地方接下来吧模板改成../../图片地址保存康康在前">
 <meta property="og:type" content="article">
-<meta property="og:title" content="milnet-1.0靶机渗透">
-<meta property="og:url" content="http://yoursite.com/2019/09/24/milnet-1.0/index.html">
+<meta property="og:title" content="某靶场cms后台LFI getshell">
+<meta property="og:url" content="http://yoursite.com/2019/10/19/cms-lfi/index.html">
 <meta property="og:site_name" content="L1e&#39;s blog">
-<meta property="og:description" content="探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含使用协议读取文件源代码，发现00截断用不了解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的PHP后缀限制可以执行命令后那就反弹个shell还没有学后渗透提权，到此为止">
+<meta property="og:description" content="首先是后台，这里存在弱口令随手admin admin就进去了进入后台有个主页频道菜单的管理，可以添加频道，进去康康进到添加频道的地方，发现此处是引用php模板的，后台代码猜测为include(xxxx)既然如此那肯定存在LFI了，想办法搞一搞，在下面看到个上传图片的地方上传个有phpinfo的图片康康，在前台随便查看个图片发现目录和这里的不是一个地方接下来吧模板改成../../图片地址保存康康在前">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/1.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/2.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/8.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/3.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/4.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/5.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/6.png">
-<meta property="og:image" content="http://yoursite.com/2019/09/24/milnet-1.0/7.png">
-<meta property="og:updated_time" content="2019-09-24T12:54:33.264Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/19/cms-lfi/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/19/cms-lfi/2.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/19/cms-lfi/3.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/19/cms-lfi/4.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/19/cms-lfi/5.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/19/cms-lfi/6.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/19/cms-lfi/7.png">
+<meta property="og:updated_time" content="2019-10-18T18:45:08.983Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="milnet-1.0靶机渗透">
-<meta name="twitter:description" content="探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含使用协议读取文件源代码，发现00截断用不了解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的PHP后缀限制可以执行命令后那就反弹个shell还没有学后渗透提权，到此为止">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/24/milnet-1.0/1.png">
+<meta name="twitter:title" content="某靶场cms后台LFI getshell">
+<meta name="twitter:description" content="首先是后台，这里存在弱口令随手admin admin就进去了进入后台有个主页频道菜单的管理，可以添加频道，进去康康进到添加频道的地方，发现此处是引用php模板的，后台代码猜测为include(xxxx)既然如此那肯定存在LFI了，想办法搞一搞，在下面看到个上传图片的地方上传个有phpinfo的图片康康，在前台随便查看个图片发现目录和这里的不是一个地方接下来吧模板改成../../图片地址保存康康在前">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/19/cms-lfi/1.png">
 
 
 
@@ -135,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/09/24/milnet-1.0/">
+  <link rel="canonical" href="http://yoursite.com/2019/10/19/cms-lfi/">
 
 
 
 
 
-  <title>milnet-1.0靶机渗透 | L1e's blog</title>
+  <title>某靶场cms后台LFI getshell | L1e's blog</title>
   
 
 
@@ -300,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/09/24/milnet-1.0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/19/cms-lfi/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="L1e">
@@ -317,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">milnet-1.0靶机渗透</h1>
+          <h1 class="post-title" itemprop="name headline">某靶场cms后台LFI getshell</h1>
         
 
         <div class="post-meta">
@@ -329,8 +328,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-24T19:48:19+08:00">
-                2019-09-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T02:11:29+08:00">
+                2019-10-19
               </time>
             
 
@@ -367,7 +366,7 @@
       
 
       
-        <p>探测ip为192.168.40.199，扫了端口发现只有22和80没什么东西<br><img src="1.png" alt="ip"><br><img src="2.png" alt="ip"><br><img src="8.png" alt="ip"><br>翻了一下发现没有功能点，目录也扫不出东西，抓了个包发现和页面上的东西一样，看来也是个文件包含<br>使用协议读取文件源代码，发现00截断用不了<br><img src="3.png" alt="ip"><br><img src="4.png" alt="ip"><br>解码后发现是参数连接php后缀，看样子不只是LFI还是RFI，这里需要用?号来绕过最后的PHP后缀限制<br><img src="5.png" alt="ip"><br><img src="6.png" alt="ip"><br>可以执行命令后那就反弹个shell<br><img src="7.png" alt="ip"><br>还没有学后渗透提权，到此为止</p>
+        <p>首先是后台，这里存在弱口令随手admin admin就进去了<br><img src="1.png" alt><br>进入后台有个主页频道菜单的管理，可以添加频道，进去康康<br><img src="2.png" alt><br>进到添加频道的地方，发现此处是引用php模板的，后台代码猜测为include(xxxx)<br><img src="3.png" alt><br>既然如此那肯定存在LFI了，想办法搞一搞，在下面看到个上传图片的地方<br>上传个有phpinfo的图片康康，在前台随便查看个图片发现目录和这里的不是一个地方<br>接下来吧模板改成../../图片地址保存康康<br><img src="4.png" alt><br>在前台看见了我添加的频道，点进去发现没问题，执行了php代码<br><img src="5.png" alt><br><img src="6.png" alt><br>在我改成一句话的时候蚁剑一直连不上，有可能是后台过滤或者waf什么的<br>然后我改用冰蝎，连接一下，没毛病<br><img src="7.png" alt><br>总结：<br>此次思路和平常的LFI差不多，没什么区别，只是要仔细观察一下</p>
 
       
     </div>
@@ -392,8 +391,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/24/LordOfTheRoot/" rel="next" title="LordOfTheRoot靶机渗透">
-                <i class="fa fa-chevron-left"></i> LordOfTheRoot靶机渗透
+              <a href="/2019/10/17/YXcms/" rel="next" title="YXcms xss+csrf组合getshell">
+                <i class="fa fa-chevron-left"></i> YXcms xss+csrf组合getshell
               </a>
             
           </div>
@@ -402,8 +401,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/09/24/pwnlab-init/" rel="prev" title="pwnlab_init靶机渗透">
-                pwnlab_init靶机渗透 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/10/19/nc-install/" rel="prev" title="centos安装nc">
+                centos安装nc <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

@@ -4,6 +4,32 @@
   
     
     <entry>
+      <title>centos安装nc</title>
+      <link href="/2019/10/19/nc-install/"/>
+      <url>/2019/10/19/nc-install/</url>
+      
+        <content type="html"><![CDATA[<ol><li>下载解压</li></ol><p>wget <a href="https://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gz" target="_blank" rel="noopener">https://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gz</a><br>tar -zxvf netcat-0.7.1.tar.gz -C /usr/local<br>cd /usr/local<br>mv netcat-0.7.1 netcat<br>cd /usr/local/netcat<br>./configure<br>make &amp;&amp; make install</p><ol start="2"><li>配置</li></ol><p>vim /etc/profile<br># set  netcat path<br>export NETCAT_HOME=/usr/local/netcat<br>export PATH=$PATH:$NETCAT_HOME/bin</p><p>保存，退出，并使配置生效：<br>source /etc/profile</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>某靶场cms后台LFI getshell</title>
+      <link href="/2019/10/19/cms-lfi/"/>
+      <url>/2019/10/19/cms-lfi/</url>
+      
+        <content type="html"><![CDATA[<p>首先是后台，这里存在弱口令随手admin admin就进去了<br><img src="1.png" alt><br>进入后台有个主页频道菜单的管理，可以添加频道，进去康康<br><img src="2.png" alt><br>进到添加频道的地方，发现此处是引用php模板的，后台代码猜测为include(xxxx)<br><img src="3.png" alt><br>既然如此那肯定存在LFI了，想办法搞一搞，在下面看到个上传图片的地方<br>上传个有phpinfo的图片康康，在前台随便查看个图片发现目录和这里的不是一个地方<br>接下来吧模板改成../../图片地址保存康康<br><img src="4.png" alt><br>在前台看见了我添加的频道，点进去发现没问题，执行了php代码<br><img src="5.png" alt><br><img src="6.png" alt><br>在我改成一句话的时候蚁剑一直连不上，有可能是后台过滤或者waf什么的<br>然后我改用冰蝎，连接一下，没毛病<br><img src="7.png" alt><br>总结：<br>此次思路和平常的LFI差不多，没什么区别，只是要仔细观察一下</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>YXcms xss+csrf组合getshell</title>
       <link href="/2019/10/17/YXcms/"/>
       <url>/2019/10/17/YXcms/</url>
